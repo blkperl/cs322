@@ -53,6 +53,15 @@ Instructions
 * incl: increment
 * decl: decrement
 * idiv: division implicit destination (edx:eax)
+* call: calling a function
+* ret: returning from a function
+
+Division
+--------
+
+* multiple results (quotient and remainder)
+* special registers (eax, edx)
+* can raise an exception
 
 Registers
 ---------
@@ -64,4 +73,39 @@ Flags
 -----
 
 * records details of last operation such as (was the result zero, was the result positive, did a carry occur, etc)
-* 
+
+Stack
+-----
+
+* esp (stack pointer) register
+* special instructions like push, pop, call, ret
+* temporary/scrath space
+* supports calling and returning from functions
+
+Memory Layout
+-------------
+
+    program | data | free | stack
+                   esp ---^
+
+Stack Operations
+----------------
+
+* pushl: push value onto stack
+* pop: value of the stack
+
+CISC
+----
+
+* single instruction can execute multiple low-level operations
+* RISC - "reduced instruction set computers" - require multiple instruction to simulate on CISC instruction
+
+Summary
+-------
+
+To generate good code
+
+* select approriate instructions
+* make good use of registers and avoid memory access
+* avoid registers already in use
+* keep number of jumps low
