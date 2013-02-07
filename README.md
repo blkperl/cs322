@@ -109,3 +109,47 @@ To generate good code
 * make good use of registers and avoid memory access
 * avoid registers already in use
 * keep number of jumps low
+
+
+
+Lecture 4
+---------
+
+Functions: resuable code
+Procedure: doesn't return, used for effect only
+Method: related to object/class
+
+Calling Conventions
+
+* how params are passed
+* how functions return
+* what happens to local vars
+* etc
+
+Base Pointer
+
+* not modified by code like the stack pointer (esp) is
+* must be saved and restroyed at the start/end of every function
+
+Building The Stack Frame
+------------------------
+
+caller: pushes args and executes a call instruction, which pushes the return addr
+calle: saves old base pointer and sets a new value, then decrements the stack pointer to reserve space for any local vars
+
+* prologue: beginning part of a fuction that bulds the stack frame
+* epilogue: dismantles the stack frame, leave and ret instruction
+* fuction result is stored in %eax
+* Adds additional overhead, and reserves %epb
+
+
+
+System V IA32 Application Binary Interface
+------------------------------------------
+
+* stack must be word aligned (multiples of 4)
+* fuction args must be pushed in reverse order
+* callee saves: ebp, ebx, edx, esi
+* caller saves: ecx, edx
+* return structure larger than 4 bytes, caller allocates space, passes extra arg, callee removes addr from stack and returns addr in eax
+
