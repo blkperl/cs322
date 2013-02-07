@@ -110,6 +110,10 @@ To generate good code
 * avoid registers already in use
 * keep number of jumps low
 
+Lecture 3
+---------
+
+Register Allocation: the process of arranging intermediate values to be held in registers rather than memory
 
 
 Lecture 4
@@ -134,8 +138,8 @@ Base Pointer
 Building The Stack Frame
 ------------------------
 
-caller: pushes args and executes a call instruction, which pushes the return addr
-calle: saves old base pointer and sets a new value, then decrements the stack pointer to reserve space for any local vars
+* caller: pushes args and executes a call instruction, which pushes the return addr
+* calle: saves old base pointer and sets a new value, then decrements the stack pointer to reserve space for any local vars
 
 * prologue: beginning part of a fuction that bulds the stack frame
 * epilogue: dismantles the stack frame, leave and ret instruction
