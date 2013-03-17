@@ -1,7 +1,14 @@
 CS 322
 ======
 
-Midterm Review
+Midterm Review / Final Review
+
+Lecture 1 / 2
+--------------
+
+* abstract syntax provides way to represent structure of programs
+* interpreter/evaluaters can document the semantics of a language
+* compilation goal is to translate between two languages while preserving semantics
 
 IA32 instructions
 -----------------
@@ -94,8 +101,7 @@ Stack Operations
 * pushl: push value onto stack
 * pop: value of the stack
 
-CISC
-----
+CISC:
 
 * single instruction can execute multiple low-level operations
 * RISC - "reduced instruction set computers" - require multiple instruction to simulate on CISC instruction
@@ -114,7 +120,12 @@ Lecture 3
 ---------
 
 Register Allocation: the process of arranging intermediate values to be held in registers rather than memory
+Register Pressure: programs that require larger number of registers
 
+Can be mediated by:
+
+ * using registers carefully
+ * using register spilling
 
 Lecture 4
 ---------
@@ -156,4 +167,9 @@ System V IA32 Application Binary Interface
 * callee saves: ebp, ebx, edx, esi
 * caller saves: ecx, edx
 * return structure larger than 4 bytes, caller allocates space, passes extra arg, callee removes addr from stack and returns addr in eax
+
+
+
+
+
 
