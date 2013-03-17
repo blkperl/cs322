@@ -117,6 +117,23 @@ Can be mediated by:
  * using registers carefully
  * using register spilling
 
+* use fewer registers by evaluating subexpressions with the greatest depth.
+* beware of side effects
+
+Pipelining:
+
+* execute the next instruction before the current one has finished
+
+Register Spilling:
+
+* moving temporary values from registers into the stack/memory
+
+Summary:
+
+* careful selection of compilation schemes can produce a good quality assembly code directly from the validated AST
+* register allocation makes a big difference to performance and code size
+* more context allows for better code execution
+
 Lecture 4
 ---------
 
@@ -136,7 +153,7 @@ Base Pointer
 * not modified by code like the stack pointer (esp) is
 * must be saved and restroyed at the start/end of every function
 
-Building The Stack Frame:
+Building The Stack Frame / Activation Record:
 
 * caller: pushes args and executes a call instruction, which pushes the return addr
 * calle: saves old base pointer and sets a new value, then decrements the stack pointer to reserve space for any local vars
@@ -155,7 +172,33 @@ System V IA32 Application Binary Interface:
 * return structure larger than 4 bytes, caller allocates space, passes extra arg, callee removes addr from stack and returns addr in eax
 
 
+Leaf procedure: a function that does not call any other function
 
+* a compiler can determine exactly which registers will be perserved by a leaf procedure
 
+Free Variables:
+* when a function refers to a variable not in its stack frame
+
+Static Links:
+* add an extra field to the stack frame to support nested functions
+* static link != base pointer
+
+Lexical Depth:
+* top function is 0
+* nested function is n+1
+
+Higher Order Functions:
+
+* a combination of nested functions and functions as first class values
+* can't discard stack frames after function exits
+* a solution: allocate the "stack frame" on the heap
+* unused activation records get reclaimed by the GC
+
+Closures:
+
+* heap allocated object ( code pointer + values of free variables)
+
+Lecture 6
+---------
 
 
