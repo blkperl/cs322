@@ -201,4 +201,35 @@ Closures:
 Lecture 6
 ---------
 
+interpreter: executes programs
+* read-eval-loops
+* user interaction 
+* less emphasis on performance
+* portable
+* experimental platforms
+
+* compiler: translates programs
+
+Bytecode:
+
+* generate internal representation of input program - a stream of bytes representing instructions for machine code
+* reduce interpretive overhead
+* enable more compact representation
+* maintain portablitiy
+
+Formalizing Programming Languages
+
+* programming lang: a tool for constructing descriptions of how a computer should behave
+* syntax: how programs are written/presented to human/machine
+* semantics: what programs "mean", what effects do the have, what function do they correspond too
+
+Dynamic Semantics
+
+* operational semantics: behavior in terms of abstract machine that executes programs
+* axiomatic semantics: logical propsitions and inference rules
+* denotional semantics: capture behavior by giving a translation/meanging/denotation of each program construct in a defined mathematical model
+
+* oper: finite automata, matching
+* axiom: regular expressions
+* denot: lang as set of strings
 
